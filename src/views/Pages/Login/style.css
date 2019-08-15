@@ -1,0 +1,904 @@
+
+
+  
+.row{
+  max-width: 1140;
+  margin:0 auto;
+}
+
+
+body{
+
+  
+  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Arvo', serif;
+ 
+  background-image:
+ url(https://focustelecom.eu/wp-content/uploads/2017/03/call-center-5-1.jpg);
+ background-position: center;
+ background-size: cover;
+ background-attachment: fixed;
+ background-repeat:no-repeat;
+
+  
+}
+
+
+/********************************navbar*******************************************/
+.nav{
+background: #42425e;
+padding:10px 20px;
+transition: all 1s ease;
+position: fixed;
+width:100%;
+z-index: 3;
+
+
+}
+.navbar-background{
+padding:5px 20px;
+}
+.navbar-brand{
+font-size: 30px;
+}
+.navbar-brand:hover{
+color:#c52222;
+transition: all 1s ease;
+}
+.nav-link:hover{
+color:#e7510c !important;
+text-decoration: none;
+transition: all 2s ease;
+font-size: 25px;
+
+}
+.nav-link{
+color:white !important;
+font-size:18px;
+}
+.btn-secondary
+{
+background: transparent;
+color:#69881a;
+border:2px solid #7ca318;
+font-size: 23px;
+transition: all 2s ease;
+
+}
+.btn-secondary:hover{
+color:#e7510c;
+border:2px solid #e7510c;
+transform: rotate(10deg);
+}
+.btn-res{
+color:#7ca318;
+}
+.btn-res:hover{
+color:#e7510c;
+}
+.toggler-btn{
+border:2px solid #7ca318;
+padding:5px;
+transition: all 2s ease;}
+.bar{
+  width: 30px;
+  height: 3px;
+  margin:5px;
+  background: #7ca318;
+  transition: all 0.5s ease;
+
+
+}
+.change .bar1{
+transform: rotate(-45deg) translate(-5px,5px);
+}
+.change .bar2{
+transform: rotate(-45deg) translate(-5px,5px);
+opacity: 0;
+}
+.change .bar3{
+transform: rotate(45deg) translate(-5px,-8px);
+}
+  
+
+
+
+.logo{
+  
+  width:180px;
+ 
+  
+
+  
+ 
+}
+.col{
+margin-top: 28px;}
+
+/**********************************heaaaader******/
+header{
+background-image:linear-gradient(to right ,rgba(0, 0, 0, 0.3),rgba(0,0, 0, 0.3)),
+ url(https://cdn.pixabay.com/photo/2017/05/01/14/59/call-center-2275745_640.jpg);
+  min-height:calc(100vh - 94px);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  position: relative;
+}
+  .height-90{
+    min-height:calc(100vh - 94px);
+
+  }
+  .text-muted{
+    color:white !important;
+    text-align: center
+  }
+
+
+.h1-header{
+
+color:rgb(255, 255, 255);
+font-family: 'Luckiest Guy', cursive;
+
+font-size:45px;
+text-align: center;
+position:relative;
+/*top:132px;*/
+border-top: 6px double #ece7e5;
+border-bottom: 6px double #ece7e5;
+animation:fromLeft;
+animation-duration: 4s;
+animation-delay: 2s;
+opacity:0;
+animation-fill-mode: forwards;
+bottom:55px
+}
+@keyframes fromLeft{
+  0%{ transform: translateX(-100px);
+  opacity: 0;}
+   50%{
+    transform: translateX(30px);
+   
+   }
+    100%{ transform: translateX(0px);
+      opacity: 1;}
+}
+
+
+.btn-danger{
+  background-color: #e7510c !important ;
+  color:white;
+  font-size: 23px;
+  border: 2px solid transparent !important;
+  border-radius: 15px;
+
+}
+.btn-danger:hover{
+background-color: #384d04 !important;
+}
+
+
+.faim-btn{
+  
+  animation:fromRight;
+animation-duration: 4s;
+animation-delay: 2s;
+opacity:0;
+animation-fill-mode: forwards;
+}
+@keyframes fromRight{
+  0%{ transform: translateX(100px);
+  opacity: 0;}
+   50%{
+    transform: translateX(-30px);
+   
+   }
+    100%{ transform: translateX(0);
+      opacity: 1;}
+}
+.btn-warning{
+  background-color: transparent !important;
+  color:white;
+  font-size: 23px;
+  border: 2px solid yellow ;
+  border-radius: 15px;
+ 
+}
+.btn-warning:hover{
+  background-color: #384d04 !important;
+  color:white;
+  border:transparent;
+}
+
+
+
+  
+
+
+.header-link{
+  display:inline-block;
+  position: absolute;
+bottom: 4%;
+right:45%;
+transition: all 2s ease;
+
+animation:fromBottom;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+
+}
+
+.header-link ,.i
+{ color:#e7510c ;
+ 
+  text-align: center;
+}
+.header-link:hover{
+  color:#384d04 ;
+
+}
+@keyframes fromBottom{
+  0%{ transform: translateY(-10px);
+  }
+   50%{
+    transform: translateY(10px);
+   
+   }
+    100%{ transform: translateY(-10px);
+      }
+}
+
+/* ****************icones sociaux**********/
+
+.corniche{
+  color:white;
+}
+.s{
+  background-color:#7ca318 !important;
+  border-style:none !important
+}
+span{
+  color:white
+}
+
+.info{
+
+background: #42425e;
+}
+.i{
+color:white !important;
+}
+.info h3{
+word-spacing: 0.6rem;
+
+  transition: color 2s ease-in-out;
+}
+.info h3:hover{
+color:#e7510c !important;
+}
+.info .i{
+transition: color 2s ease-in-out;
+}
+.info .i:hover{
+color:#e7510c !important;
+}
+/*section articles specifiques*/
+.articles-container{
+position:relative;
+/*lil link  for zoom*/
+overflow: hidden;
+background: linear-gradient(rgba(0,0,0 ),rgba(0,0,0));
+transition: all 2s ease;
+}
+.item-img{
+transition: all 2s ease;
+}
+
+.articles-container:hover .item-img{
+transform: scale(1.2);
+opacity:0.5;
+}
+.item-link{
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);/*center*/
+color:#e7510c;
+font-size:2rem;
+border-top:3px solid #e7510c;
+border-bottom:3px solid #e7510c;
+transition:  all 2s ease;
+opacity:0;
+}
+.articles-container:hover .item-link{
+opacity:1;
+}
+.item-link:hover{
+color: #c9c1ac;
+border:3px solid #c9c1ac;
+background: #c9c1ac;
+color:#242424
+
+}
+.articles-container:hover{
+outline:10px solid #e7510c;
+outline-offset: 0.8rem; /*on peut faire le negatif au milieu d'img*/
+}
+/*section hostoire*/
+.back{
+background-image:linear-gradient(rgba(255, 255, 255, 0.8),rgba(255,255, 255, 0.8)),
+ url(https://www.pointillist.com/wp-content/uploads/2019/01/Call-Center-Agents-844x422.png);
+  
+}
+
+.h2-histoire{
+color:#e7510c; 
+font-family: 'Luckiest Guy', cursive;
+}
+p{
+font-family: 'Arvo', serif;
+}
+/* ******************avis**************/
+.avis-img{
+width: 150px;
+}
+.avis-item{
+background: rgba(255, 255, 255, 0.7);
+clip-path:polygon(5% 0,100% 0, 90% 100%,0 100%)
+}
+/******************service******************/
+.titre-service {
+color:#e7510c;
+
+}
+.service-icons a{
+color:#3b5998 !important;
+transition:all 2s ease-in-out;
+}
+.service-icons a:hover{
+color:#242424 !important;
+transform:translateY(-6px) ;
+}
+/***************footer***************/
+#back-to-top{
+background: #c9c1ac;
+border-radius: 10px;
+display: inline-block;
+}
+.scrollTop{
+
+position:fixed;
+bottom:70px;
+right:10px;
+}
+
+/************************service*******************************/
+.services
+{
+	width: 100%;
+	background: #0e2536;
+	padding-top: 99px;
+	padding-bottom: 102px;
+}
+.section_title{
+  text-align: center;
+    line-height: 61px;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 48px;
+    color:white;
+}
+.bnf{
+  color:white;
+}
+.icon_boxes_row
+{
+	margin-top: 100px;
+}
+.icon_box
+{
+	margin-bottom: 85px;
+}
+.icon_box_icon
+{
+	width: 49px;
+	height: 49px;
+}
+.icon_box_icon img
+{
+	max-width: 100%;
+}
+.icon_box_title
+{
+	font-size: 20px;
+	font-weight: 600;
+	color: #404040;
+	padding-left: 25px;
+}
+.icon_box_text
+{
+	font-size: 14px;
+	font-weight: 500;
+	color: #838383;
+	line-height: 2.14;
+	margin-top: 21px;
+}
+.services_button
+{
+	margin-top: 4px;
+}
+.success{
+  color:red;
+}
+.icon_retina {
+  display: none;
+}
+.image{
+ 
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    vertical-align: top;
+    outline: none;
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.parag{
+    align-items: center;
+    margin-bottom: 29px;
+    font-size: 20px;
+    line-height: 26px;
+    
+
+}
+.wrapper {
+    text-align: left;
+    position: relative;
+    display: block;
+    padding: 90px 0 0 0;
+  
+    background: #fff;
+}
+.diagram_list {
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.diagram_list {
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+li {
+  text-align: -webkit-match-parent;
+}
+.diagram_list {
+  margin: 0 0 0 -30px !important;
+  padding: 0;
+}
+.footer
+{
+	display: block;
+	position: relative;
+	width: 100%;
+	padding-top: 64px;
+	background: linear-gradient(rgba(0,0,0, 0.8),rgba(0,0,0,0.6)),
+	url(http://www.invensis.net/blog/wp-content/uploads/2015/05/best-qualities-of-call-center-agent-Invensis.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat:no-repeat;
+
+
+
+}
+.footer_content
+{
+	padding-bottom: 100px;
+}
+.footer_about
+{
+	padding-top: 34px;
+}
+.footer .logo a
+{
+	color: #FFFFFF;
+}
+.footer_about_text
+{
+	font-size: 14px;
+	font-weight: 500;
+	color: white;
+	line-height: 2.14;
+	margin-top: 39px;
+}
+.footer_social
+{
+	margin-top: 30px;
+}
+.footer_social ul li:not(:last-child)
+{
+	margin-right: 30px;
+}
+.footer_social ul li a i
+{
+	color: #FFFFFF;
+}
+.copyright
+{
+	font-size: 12px;
+	font-style: italic;
+	color: white;
+	margin-top: 54px;
+}
+.footer_contact
+{
+	padding-top: 35px;
+}
+.footer_contact_title
+{
+	font-size: 20px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.footer_contact_form_container
+{
+	margin-top: 43px;
+}
+.footer_contact_form div input
+{
+	width: calc((100% - 12px) / 2);
+}
+.footer_contact_input
+{
+	width: 100%;
+	height: 47px;
+	background: #6a6d72;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	margin-bottom: 15px;
+	color: #FFFFFF;
+	font-weight: 500;
+}
+.footer_contact_input::-webkit-input-placeholder
+{
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.footer_contact_input:-moz-placeholder
+{
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.footer_contact_input::-moz-placeholder
+{
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+} 
+.footer_contact_input:-ms-input-placeholder
+{ 
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.footer_contact_input::input-placeholder
+{
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.footer_contact_textarea
+{
+	height: 98px;
+	padding-top: 15px;
+}
+.footer_contact_button
+{
+	width: 275px;
+	height: 54px;
+	background: #32c69a;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	margin-top: -5px;
+}
+.footer_hours
+{
+	background: rgba(22,22,23,0.61);
+	padding-left: 27px;
+	padding-top: 35px;
+	padding-bottom: 60px;
+	padding-right: 30px;
+}
+.footer_hours_title
+{
+	font-size: 20px;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.hours_list
+{
+	margin-top: 47px;
+}
+.hours_list li div
+{
+	font-size: 14px;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+.hours_list li:not(:last-child)
+{
+	margin-bottom: 27px;
+}
+.footer_bar
+{
+	width: 100%;
+	background: #32c69a;
+}
+.footer_bar_content
+{
+	width: 100%;
+	height: 51px;
+}
+.footer_nav ul li:not(:last-child)
+{
+	margin-right: 64px;
+}
+.footer_nav ul li a
+{
+	font-size: 11px;
+	font-weight: 500;
+	color: white;
+	text-transform: uppercase;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.footer_nav ul li a:hover
+{
+	color: #e08206;
+}
+.footer_links
+{
+	margin-left: 84px;
+}
+.footer_links ul li
+{
+	position: relative;
+}
+.footer_links ul li:not(:last-child)::after
+{
+	content: '|';
+	margin-left: 9px;
+	margin-right: 9px;
+}
+.footer_links ul li a
+{
+	font-size: 11px;
+	font-weight: 500;
+	color: #e7f3f3;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.footer_links ul li a:hover
+{
+	color: #32c69a;
+}
+.footer_phone span
+{
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+}
+.footer_phone i
+{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+	color: white;
+}
+
+
+@media only screen and (max-width: 1199px)
+{
+	
+	
+	.footer_contact_form div input
+	{
+		width: 100%;
+	}
+	.footer_nav ul li:not(:last-child)
+	{
+		margin-right: 40px;
+	}
+	.footer_links
+	{
+		margin-left: 54px;
+	}
+}
+
+
+@media only screen and (max-width: 991px)
+{
+	.home_title
+	{
+		font-size: 48px;
+	}
+	.header,
+	.header.scrolled
+	{
+		position: fixed;
+		top: 0px;
+		left: 0;
+	}
+	.header_top_extra,
+	.header_nav
+	{
+		display: none !important;
+	}
+	.hamburger
+	{
+		display: block;
+	}
+	.info_form_container
+	{
+		padding-bottom: 44px;
+	}
+	.info_box_col:not(:last-child)
+	{
+		margin-bottom: 40px;
+	}
+	.news
+	{
+		margin-top: 100px;
+	}
+	.footer_col:not(:last-child)
+	{
+		margin-bottom: 100px;
+	}
+	.footer_contact
+	{
+		padding-top: 0;
+	}
+	.footer_bar_content
+	{
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.footer_nav ul li:not(:last-child)
+	{
+		margin-bottom: 8px;
+	}
+	.footer_links ul li:not(:last-child)::after
+	{
+		display: none;
+	}
+	.footer_phone
+	{
+		margin-left: 80px;
+	}
+	.footer_links ul li:not(:last-child)
+	{
+		margin-bottom: 7px;
+	}
+}
+.lst{
+	list-style: none;
+}
+
+/****************************booster vos clients*****************************************/
+.boostez{
+	background-color: #fff;
+}
+
+.pt10 {
+	padding-top: 10px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	
+}
+.bg_title h2 {
+	
+    text-align: center;
+    line-height: 61px;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 18px;
+	font-size: 48px;
+	color: #2d2e2e;
+}
+.pt46 {
+    padding-top: 46px;
+}
+.col-sm-3{
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.pb80 {
+    padding-bottom: 80px;
+}
+.module_iconboxes {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -4px;
+	float: none;
+}
+.module_cont {
+    padding-bottom: 75px;
+}
+.iconbox_wrapper {
+    padding: 0;
+    position: relative;
+    text-align: center;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+.icon_title_wrap {
+    position: relative;
+    margin-bottom: 19px;
+}
+.ico{
+display: inline-block;
+    text-align: center;
+    margin: 0 auto 23px auto;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: none;
+    vertical-align: top;
+	position: relative;}
+	a {
+
+		color: rgb(12, 12, 12);
+		text-decoration: none;
+		background-color: transparent;
+	}
+	.para{
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	}.text-center {
+		text-align: center;
+	}
+	
+	
+	

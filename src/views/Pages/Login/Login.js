@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import './style.css'
+import './magnific-popup/magnific-popup.css'
 
 class Login extends Component {
   login = () => {
@@ -49,7 +50,7 @@ class Login extends Component {
          </li>
             
          <li class="nav-item">
-          <a class=" nav-link text-capitalize" href="cantact.html">Contact </a>
+          <a class=" nav-link text-capitalize" href="index.html">Contact </a>
       </li>
             </ul>
             {/* <form class="form-inline d-none d-lg-block mr-5">
@@ -600,7 +601,7 @@ de traitement d’un contact</h3>
 							<div class="copyright">
                
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
-All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="Essid" target="_blank">Essid</a>
+All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a  className='essid'href="Essid" target="_blank">Essid</a>
 
 </div>
 						</div>

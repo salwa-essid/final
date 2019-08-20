@@ -4,13 +4,12 @@ import { Card, CardBody, Col, Row } from 'reactstrap';
 class Cards extends Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.toggleFade = this.toggleFade.bind(this);
     this.state = {
       collapse: true,
       fadeIn: true,
-      timeout: 300
+      timeout: 300,
     };
   }
 
@@ -35,8 +34,8 @@ class Cards extends Component {
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="" class="font-weight-bold text-primary"><i className="fa fa-user-circle fa-lg pr-2"></i> Firstname</label>
-                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" />
+                        <label for="" class="font-weight-bold text-primary"><i className="fa fa-user-circle fa-lg pr-2" ></i> Firstname</label>
+                        <input type="text" name="firstname" id="" class="form-control" placeholder="" aria-describedby="helpId" />
                         <small id="helpId" class="text-muted">Help text</small>
                       </div>
                     </div>

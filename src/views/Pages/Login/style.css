@@ -118,7 +118,7 @@ margin-top: 28px;}
 /**********************************heaaaader******/
 header{
 background-image:linear-gradient(to right ,rgba(0, 0, 0, 0.3),rgba(0,0, 0, 0.3)),
- url(https://cdn.pixabay.com/photo/2017/05/01/14/59/call-center-2275745_640.jpg);
+ url(https://legorafeuj.com/wp-content/uploads/2019/04/callcenter.jpg);
   min-height:calc(100vh - 94px);
   background-position: center;
   background-size: cover;
@@ -248,6 +248,7 @@ animation-iteration-count: infinite;
     100%{ transform: translateY(-10px);
       }
 }
+
 
 /* ****************icones sociaux**********/
 

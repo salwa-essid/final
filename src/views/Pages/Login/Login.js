@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import { Button, Col,  Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import './style.css'
-import './magnific-popup/magnific-popup.css'
+
 
 class Login extends Component {
   login = () => {
@@ -12,9 +12,9 @@ class Login extends Component {
      
       <div className="app ">
 		
-        <nav class="navbar nav navbar-expand-lg ">
+        <nav className="navbar nav navbar-expand-lg ">
           
-          <a class="navbar-brand " href="#">
+          <a className="navbar-brand " href="#">
             <img class="logo"src='https://i.pinimg.com/originals/20/c4/39/20c4393dd9ffd6fa5402cc70404e4b97.png'alt=""/></a>
         
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"  >
@@ -34,23 +34,21 @@ class Login extends Component {
                 <li class="nav-item">
                     <a class=" nav-link text-capitalize" href="index.html">Acceuil </a>
                </li>
+             
              <li class="nav-item">
-                  <a class=" nav-link text-capitalize" href="index.html">Service Client </a>
-             </li> 
-             <li class="nav-item">
-              <a class=" nav-link text-capitalize" href="index.html"> Histoire </a>
+              <a class=" nav-link text-capitalize" href="#histoire"> Histoire </a>
          </li>
            
           
            <li class="nav-item">
-              <a class=" nav-link text-capitalize" href="index.html">Facteurs Succés </a>
+              <a class=" nav-link text-capitalize" href="#service">Facteurs Succés </a>
          </li>
          <li class="nav-item">
-              <a class=" nav-link text-capitalize" href="index.html"> Chiffre D'Affaire </a>
+              <a class=" nav-link text-capitalize" href="#chiffre"> Chiffre D'Affaire </a>
          </li>
             
          <li class="nav-item">
-          <a class=" nav-link text-capitalize" href="index.html">Contact </a>
+          <a class=" nav-link text-capitalize" href="#contact">Contact </a>
       </li>
             </ul>
             {/* <form class="form-inline d-none d-lg-block mr-5">
@@ -66,7 +64,7 @@ class Login extends Component {
       </nav>
         
         
-      <header id="header top-icon">
+      <header id="header top-icon ">
               <div class="container" >
                 <div class="row height-90 align-items-center
                 justify-content-center">
@@ -103,8 +101,8 @@ class Login extends Component {
               <a href="#articles-speciales" class="btn header-link px-2
               "> <i className="fa fa-phone fa-5x"></i></a>
             </header>
-        
-      <div class="container-fluid  info p-3" id="top-icons">
+    
+            <div class="container-fluid  info p-3" id="top-icons">
         <div class="row ">
           <div class="col d-flex justify-content-between 
           align-items-baseline flex-wrap">
@@ -125,93 +123,11 @@ class Login extends Component {
               </a>
             </div>
             <h3 class="primary-color p-2 text-capitalize corniche">Corniche/sahloul,4000 Sousse
-
             </h3>
           </div>
         </div>
       </div>
-      <section class="py-5" id="Service Client">
-        <div class="container my-5">
-          <div class="row parent-container">
-           
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src='https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg'
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 
-                 <a href="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-           
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src='https://voxbaysolutions.com/wp-content/uploads/2019/07/iStock-897528636.jpg'
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 <a href="https://voxbaysolutions.com/wp-content/uploads/2019/07/iStock-897528636.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-         
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg"
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 <a href="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-          
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg"
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 <a href="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-           
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg"
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 <a href="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-           
-            <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
-                <div class="articles-container">
-                  <img src="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg"
-                 class="img-fluid img-thumbnail item-img "   alt="img1"/>
-                 <a href="https://socialway.cl/blog/wp-content/uploads/2019/01/bigstock-Call-Center-79077622.jpg">
-                <h1 class=" text-uppercase text-center item-link px-3">
-                Service Client
-                </h1></a>
-
-                </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-   
-      <section id="histoire" class="py-2 my-1">
+    <section id="histoire" class="py-2 my-1">
         <div class="container back">
           <div class="row">
             <div class="col">
@@ -275,7 +191,7 @@ les opérateurs d'électricité.</p>
        
         
         
-      <div className="services">
+      <div id="service" className="services">
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
@@ -340,7 +256,7 @@ les opérateurs d'électricité.</p>
                         </div>
                         <div class="diagram_content">
                             <h3 className='parag' style={{color:'#FFF'}} >Pour le taux de résolution<br/>
-au premier contact</h3>
+                               au premier contact</h3>
                         </div>
                       
                  
@@ -359,7 +275,7 @@ au premier contact</h3>
                         </div>
                         <div class="diagram_content">
                             <h3 className='parag' style={{color:'#FFF'}} >Pour le temps moyen <br/>
-de traitement d’un contact</h3>
+                                  de traitement d’un contact</h3>
                         </div>
                       
                  
@@ -375,7 +291,7 @@ de traitement d’un contact</h3>
       </div>
 	</div>
 	</div>
-    <div className="container-fluid boostez"> 
+    <div id="chiffre" className="container-fluid boostez"> 
 	 <div className="row pt10 ">
      <div className="bg_title">
        <h2 className='client'>
@@ -582,7 +498,7 @@ de traitement d’un contact</h3>
 				<div class="row">
 
 					
-					<div class="col-lg-3 footer_col">
+					<div id="contact" class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
 								<a href="#">Call Center<span></span></a>	
@@ -659,9 +575,9 @@ All rights reserved | This template is made with <i class="fa fa-heart-o" aria-h
 							<nav class="footer_nav">
 								<ul class=" lst d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="about.html">Articles specials</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="news.html">News</a></li>
+									<li><a href="about.html">Histoire</a></li>
+									<li><a href="services.html">Facteurs Succés</a></li>
+									<li><a href="news.html">Chiffre D'Affaire</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
 							</nav>

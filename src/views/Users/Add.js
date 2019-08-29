@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Card, CardBody, Col, Row } from 'reactstrap';
-import axios from 'axios'
-// import {Link} from 'react-router-dom'
-import { connect } from 'react-redux';
+import Axios from 'axios';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
+
 class AddUser extends Component {
   constructor(props) {
     super(props);
@@ -13,14 +13,55 @@ class AddUser extends Component {
       collapse: true,
       fadeIn: true,
       timeout: 300,
-       usename:'',
-      lastname:'',
-      phone:'',
-      email:'',
-      address:'',
-      password:''
-
+      username: "",
+      lastname: "",
+      address: "",
+      email: "",
+      password: "",
+      phone: ""
     };
+  }
+
+  handleChange = (e) => {
+    if (e.target.name === "firstname") {
+      this.setState({ username: e.target.value })
+    }
+    if (e.target.name === "lastname") {
+      this.setState({ lastname: e.target.value })
+    }
+    if (e.target.name === "address") {
+      this.setState({ address: e.target.value })
+    }
+    if (e.target.name === "email") {
+      this.setState({ email: e.target.value })
+    }
+    if (e.target.name === "phone") {
+      this.setState({ phone: e.target.value })
+    }
+    if (e.target.name === "password") {
+      this.setState({ password: e.target.value })
+    }
+  }
+
+  handleSubmit = () => {
+    Axios.post("http://127.0.0.1:5001/user", {
+      username: this.state.username,
+      lastname: this.state.lastname,
+      address: this.state.address,
+      email: this.state.email,
+      password: this.state.password,
+      phone: this.state.phone
+    }).then(success => {
+      // if status 200 OK
+      if (typeof (success.data.error) != "undefined" && success.data.error !== "") {
+        ToastsStore.error(success.data.error)
+      } else if (typeof (success.data.message) != "undefined" && success.data.message !== "") {
+        ToastsStore.success(success.data.message)
+        this.props.history.push("/users/list");
+      }
+    }).catch(err => {
+      ToastsStore.error("Server error")
+    })
   }
 
   toggle() {
@@ -31,49 +72,10 @@ class AddUser extends Component {
     this.setState((prevState) => { return { fadeIn: !prevState } });
   }
 
-handelChange=(event)=>{
-        this.setState({ [event.target.name]:event.target.value})
-       
-    }
-
-    // adduser=()=>
-    // {
-    //   axios.post('http://127.0.0.1:5001/user',{...this.state})
-    //    .then(data=>{
-    //      if(data){
-    //        console.log(data.data)
-    //      }
-    //    })
-    //    .catch((err)=>alert(err)) 
-    // }
-
-
-
-    adduser=()=>
-    {
-      const dataa = {
-        "username": "mohamed",
-        "lastname": "essid",
-        "address": "sbeitla",
-        "email": "mohamed.essid@gmail.com",
-        "password": "mohamed1234",
-        "phone": "98678645",
-        "isActive": false
-    
-    }
-     // console.log({...this.state})
-      axios.post('http://127.0.0.1:5001/user',dataa)
-       .then(data=>{
-         console.log(data.data)
-        this.props.addReducer(dataa)
-       })
-       .catch((err)=>alert(err)) 
-    }
-
-    
   render() {
     return (
       <div className="animated fadeIn">
+        <ToastsContainer store={ToastsStore} />
         <Row>
           <Col xs="12" sm="12" md="12">
             <Card>
@@ -85,14 +87,14 @@ handelChange=(event)=>{
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"><i className="fa fa-user-circle fa-lg pr-2"></i> Firstname</label>
-                        <input type="text"  id="" class="form-control" placeholder="" aria-describedby="helpId" name='username' onChange={this.handelChange}/>
+                        <input type="text" name="firstname" id="" class="form-control" placeholder="" aria-describedby="helpId" onChange={this.handleChange} />
                         <small id="helpId" class="text-muted">Help text</small>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"><i className="fa fa-user-circle fa-lg pr-2"></i> Lastname</label>
-                        <input type="text" class="form-control"  id="" aria-describedby="emailHelpId" placeholder="" name=' lastname' onChange={this.handelChange}/>
+                        <input type="text" class="form-control" name="lastname" id="" aria-describedby="emailHelpId" placeholder="" onChange={this.handleChange} />
                         <small id="emailHelpId" class="form-text text-muted">Help text</small>
                       </div>
                     </div>
@@ -101,14 +103,14 @@ handelChange=(event)=>{
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"><i className="fa fa-map-marker fa-lg pr-2"></i> Address</label>
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelpId" placeholder="" name=' address' onChange={this.handelChange} />
+                        <input type="text" class="form-control" name="address" id="" aria-describedby="emailHelpId" placeholder="" onChange={this.handleChange} />
                         <small id="emailHelpId" class="form-text text-muted">Help text</small>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"><i className="fa fa-phone fa-lg pr-2"></i> Phone</label>
-                        <input type="text"  id="" class="form-control" placeholder="" aria-describedby="helpId" name='phone' onChange={this.handelChange}/>
+                        <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId" onChange={this.handleChange} />
                         <small id="helpId" class="text-muted">Help text</small>
                       </div>
                     </div>
@@ -117,14 +119,14 @@ handelChange=(event)=>{
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"><i className="fa fa-envelope fa-lg pr-2"></i> E-mail</label>
-                        <input type="email" class="form-control"  id="" aria-describedby="emailHelpId" placeholder="" name='email' onChange={this.handelChange} />
+                        <input type="text" class="form-control" name="email" id="" aria-describedby="emailHelpId" placeholder="" onChange={this.handleChange} />
                         <small id="emailHelpId" class="form-text text-muted">Help text</small>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="" class="font-weight-bold text-primary"> <i className="fa fa-lock fa-lg pr-2"></i> Password</label>
-                        <input type="password"  id="" class="form-control" placeholder="" aria-describedby="helpId" name='Password' onChange={this.handelChange}/>
+                        <input type="password" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId" onChange={this.handleChange} />
                         <small id="helpId" class="text-muted">Help text</small>
                       </div>
                     </div>
@@ -133,18 +135,11 @@ handelChange=(event)=>{
                     <hr />
                     <div class="row">
                       <div class="col-md-6 d-flex justify-content-start pl-3">
-                        <button type="button" name="" id="" class="btn btn-danger font-weight-bold w-25 btn-lg">
-                          <i className="fa fa-refresh pr-2"></i> Reset</button>
+                        <button type="button" name="" id="" class="btn btn-danger font-weight-bold w-25 btn-lg"><i className="fa fa-refresh pr-2"></i> Reset</button>
                       </div>
-                       
-                      <div className="col-md-6 d-flex justify-content-end pr-3">
-                      {/* <Link to='/users/list'> */}
-                     <button type="button" name="" id="" className="btn btn-success font-weight-bold w-25 btn-lg"
-                        onClick={this.adduser}>
-                          <i className="fa fa-send pr-2"></i> Submit</button>
-                          {/* </Link> */}
+                      <div class="col-md-6 d-flex justify-content-end pr-3">
+                        <button type="button" name="" id="" class="btn btn-success font-weight-bold w-25 btn-lg" onClick={this.handleSubmit}><i className="fa fa-send pr-2"></i> Submit</button>
                       </div>
-                        
                     </div>
                   </div>
                 </form>
@@ -156,14 +151,5 @@ handelChange=(event)=>{
     );
   }
 }
-const mapDispatchToProps=(dispatch)=>{
-  return{
-      addReducer:newuser=>{
-          dispatch({
-               type:'ADD_USER',
-               newuser
-          })
-      }
-  }
-  }
-export default connect(null,mapDispatchToProps)(AddUser);
+
+export default AddUser;

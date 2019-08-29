@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 class ItemUser extends Component {
     constructor(props) {
@@ -22,51 +22,48 @@ class ItemUser extends Component {
     toggleFade() {
         this.setState((prevState) => { return { fadeIn: !prevState } });
     }
-    deleteuser=()=>
-    {  const {item} = this.props
-    axios.delete(`http://127.0.0.1:5001/user/${item._id}`)   
-  .then(()=>this.props.deleteUserReducer(item._id)) 
-  .catch((err)=>alert(err)) 
+    deleteuser = () => {
+        const { item } = this.props
+        axios.delete(`http://127.0.0.1:5001/user/${item.id}`)
+            .then(() => this.props.deleteUserReducer(item.id))
+            .catch((err) => alert(err))
     }
+
     render() {
-        const {item}=this.props
+        const { item } = this.props
         return (
-            // <div className="animated fadeIn">
-            
-                <tr>
-                    <td scope="row">{item.username}{item.lastname}</td>
-                    <td scope="row">{item.email}</td>
-                    <td scope="row">{item.phone}</td>
-                    <td scope="row">{item.numero}</td>
-                    <td scope="row">
+            <tr>
+                <td >{item.username} {item.lastname}</td>
+                <td >{item.email}</td>
+                <td >{item.phone}</td>
+                <td >{item.numero}</td>
+                <td >
                     <div class="row">
                         <div class="col-xs-4 col-md-4 d-flex justify-content-end">
-                            <i className="fa fa-info-circle t-green fa-lg"></i>
+                            <i className="fa fa-info-circle t-green fa-lg" onClick={this.getUser}></i>
                         </div>
                         <div class="col-xs-4 col-md-4 d-flex justify-content-center">
                             <i className="fa fa-lock t-blue fa-lg"></i>
                         </div>
                         <div class="col-xs-4 col-md-4 d-flex justify-content-start">
-                            <i className="fa fa-trash t-red fa-lg"onClick={this.deleteuser}></i>
+                            <i className="fa fa-trash t-red fa-lg" onClick={this.deleteuser} ></i>
                         </div>
                     </div>
-                    </td>
-                </tr>
-                
-        //    </div>                                 
+                </td>
+            </tr>
+
+            //    </div>                                 
         );
     }
 }
-const mapDispatchToProps=(dispatch)=>
-{
+const mapDispatchToProps = (dispatch) => {
     return {
-        deleteUserReducer:_id=>
-        {
+        deleteUserReducer: id => {
             dispatch({
-                type:'REMOVE_USER',
-                _id
+                type: 'REMOVE_USER',
+                id
             })
         }
     }
 }
-export default  connect(null,mapDispatchToProps)(ItemUser);
+export default connect(null, mapDispatchToProps)(ItemUser);

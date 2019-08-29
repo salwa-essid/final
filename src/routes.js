@@ -1,4 +1,7 @@
 import React from 'react';
+import UserInfo from './views/Users/userInfo';
+
+import UpdateUser from './views/Users/UpdateUser';
 
 const Breadcrumbs = React.lazy(() =>
     import('./views/Base/Breadcrumbs'));
@@ -77,11 +80,13 @@ const ListUser = React.lazy(() =>
 const AddUser = React.lazy(() =>
     import('./views/Users/Add'));
 
+
 const AddPlug = React.lazy(() =>
     import('./views/plugs/New'));
 
 const PlugList = React.lazy(() =>
     import('./views/plugs/List'));
+
 
 
 
@@ -131,12 +136,14 @@ const routes = [
     { path: '/charts', name: 'Charts', component: Charts },
     { path: '/admin/add', exact: true, name: 'Add Admin', component: AddAdmin },
     { path: '/admin/list', exact: true, name: 'List Admin', component: ListAdmin },
-   
+
     { path: '/users/add', exact: true, name: 'Add Users', component: AddUser },
-    { path: '/users/list', exact: true, name: 'List Users', component: ListUser },
+    { path: '/users/list', exact: true, name: 'list_users', component: ListUser },
+    { path: '/users/info/:id', exact: true, name: 'info_users', component: UserInfo },
+    { path: '/users/update/:id', exact: true, name: 'update_users', component: UpdateUser },
     { path: '/plug/add', exact: true, name: 'Add Plug', component: AddPlug },
     { path: '/plug/list', exact: true, name: 'List Plugs', component: PlugList },
-   
+
 ];
 
 export default routes;

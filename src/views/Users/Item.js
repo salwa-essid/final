@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class ItemUser extends Component {
     constructor(props) {
@@ -38,16 +39,23 @@ class ItemUser extends Component {
                 <td >{item.phone}</td>
                 <td >{item.numero}</td>
                 <td >
-                    <div class="row">
-                        <div class="col-xs-4 col-md-4 d-flex justify-content-end">
+                    <div className="row ">
+                    <Link to={`/users/info/${item.id}`}>
+                        <div Name="col-xs-4 col-md-3 d-flex justify-content-end">
                             <i className="fa fa-info-circle t-green fa-lg" onClick={this.getUser}></i>
                         </div>
-                        <div class="col-xs-4 col-md-4 d-flex justify-content-center">
-                            <i className="fa fa-lock t-blue fa-lg"></i>
+                        </Link>
+                        <div className="col-xs-4 col-md-3 d-flex justify-content-center">
+                            <i className="fa fa-lock t-blue fa-lg" ></i>
                         </div>
-                        <div class="col-xs-4 col-md-4 d-flex justify-content-start">
+                        <div className="col-xs-4 col-md-3 d-flex justify-content-center">
                             <i className="fa fa-trash t-red fa-lg" onClick={this.deleteuser} ></i>
                         </div>
+                        <Link to={`/users/update/${item.id}`}>
+                        <div className="col-xs-4 col-md-3 d-flex  justify-content-start">
+                            <i className="fa fa-edit t-green fa-lg"></i>
+                        </div>
+                         </Link>
                     </div>
                 </td>
             </tr>

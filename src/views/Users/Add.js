@@ -138,7 +138,8 @@ class AddUser extends Component {
                         <button type="button" name="" id="" class="btn btn-danger font-weight-bold w-25 btn-lg"><i className="fa fa-refresh pr-2"></i> Reset</button>
                       </div>
                       <div class="col-md-6 d-flex justify-content-end pr-3">
-                        <button type="button" name="" id="" class="btn btn-success font-weight-bold w-25 btn-lg" onClick={this.handleSubmit}><i className="fa fa-send pr-2"></i> Submit</button>
+                        <button type="button" name="" id="" class="btn btn-success font-weight-bold w-25 btn-lg" onClick={this.handleSubmit}>
+                          <i className="fa fa-send pr-2"></i> Submit</button>
                       </div>
                     </div>
                   </div>

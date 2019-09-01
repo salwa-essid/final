@@ -7,25 +7,13 @@ import ItemUser from './Item'
 
 
 class ListUser extends Component {
-
-
-
-
-
-
     componentDidMount = () => {
 
         axios.get('http://127.0.0.1:5001/users').then((res) => {
             this.props.updateUserReducer(res.data.data.data);
-
-            console.log("data : ", res.data.data.data)
-            //  this.setState({tabs: res.data.data.data});
-
-        })
-
-
-
-
+        }).catch(e => {
+            // handle errors 
+        });
     }
     render() {
         const { users } = this.props
@@ -43,7 +31,7 @@ class ListUser extends Component {
                                         <h1 className="h1 text-center text-success font-weight-bold">User List</h1>
                                         <hr></hr>
                                         <div className="table-responsive">
-                                            <table class="table">
+                                            <table className="table">
                                                 <thead>
                                                     <tr className="bg-blue">
                                                         <th>FullName</th>
@@ -54,7 +42,6 @@ class ListUser extends Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {console.log(users)}
                                                     {users.map((el, index) => <ItemUser key={index} item={el} />)}
                                                 </tbody>
                                             </table>

@@ -54,7 +54,7 @@ class Users extends Component {
                   </thead>
                   <tbody>
                     {userList.map((user, index) =>
-                      <UserRow key={index} user={user}/>
+                      <UserRow key={index} user={user} />
                     )}
                   </tbody>
                 </Table>

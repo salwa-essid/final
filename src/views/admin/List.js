@@ -32,7 +32,7 @@ class Cards extends Component {
                                 <h1 className="h1 text-center text-success font-weight-bold">Admin List</h1>
                                 <hr></hr>
                                 <div className="table-responsive">
-                                    <table class="table">
+                                    <table className="table">
                                         <thead>
                                             <tr className="bg-blue">
                                                 <th>FullName</th>
@@ -49,14 +49,14 @@ class Cards extends Component {
                                                 <td>97561998</td>
                                                 <td>30</td>
                                                 <td>
-                                                    <div class="row">
-                                                        <div class="col-xs-4 col-md-4 d-flex justify-content-end">
+                                                    <div className="row">
+                                                        <div className="col-xs-4 col-md-4 d-flex justify-content-end">
                                                             <i className="fa fa-info-circle t-green fa-lg"></i>
                                                         </div>
-                                                        <div class="col-xs-4 col-md-4 d-flex justify-content-center">
+                                                        <div className="col-xs-4 col-md-4 d-flex justify-content-center">
                                                             <i className="fa fa-lock t-blue fa-lg"></i>
                                                         </div>
-                                                        <div class="col-xs-4 col-md-4 d-flex justify-content-start">
+                                                        <div className="col-xs-4 col-md-4 d-flex justify-content-start">
                                                             <i className="fa fa-trash t-red fa-lg"></i>
                                                         </div>
                                                     </div>

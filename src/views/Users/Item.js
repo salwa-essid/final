@@ -23,6 +23,7 @@ class ItemUser extends Component {
     toggleFade() {
         this.setState((prevState) => { return { fadeIn: !prevState } });
     }
+
     deleteuser = () => {
         const { item } = this.props
         axios.delete(`http://127.0.0.1:5001/user/${item.id}`)
@@ -41,7 +42,7 @@ class ItemUser extends Component {
                 <td >
                     <div className="row ">
                     <Link to={`/users/info/${item.id}`}>
-                        <div Name="col-xs-4 col-md-3 d-flex justify-content-end">
+                        <div name="col-xs-4 col-md-3 d-flex justify-content-end">
                             <i className="fa fa-info-circle t-green fa-lg" onClick={this.getUser}></i>
                         </div>
                         </Link>

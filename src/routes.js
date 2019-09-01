@@ -88,10 +88,10 @@ const PlugList = React.lazy(() =>
     import('./views/plugs/List'));
 
 
-    const UserInfo = React.lazy(() =>
+const UserInfo = React.lazy(() =>
     import('./views/Users/userInfo'));
 
-    const  UpdateUser = React.lazy(() =>
+const UpdateUser = React.lazy(() =>
     import('./views/Users/UpdateUser'));
 
 
@@ -145,7 +145,7 @@ const routes = [
 
     { path: '/users/add', exact: true, name: 'Add Users', component: AddUser },
     { path: '/users/list', exact: true, name: 'list_users', component: ListUser },
-    { path: '/users/info/:id', exact: true, name: 'info_users', component: UserInfo },
+    { path: '/users/info/:id', exact: true, name: 'User info', component: UserInfo },
     // { path: '/users/update/:id', exact: true, name: 'update_users', render={(props)=><UpdateUser/>} },
     { path: '/users/update/:id', exact: true, name: 'update_users', component: UpdateUser },
     { path: '/plug/add', exact: true, name: 'Add Plug', component: AddPlug },

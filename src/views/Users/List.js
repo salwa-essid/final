@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import { connect } from 'react-redux'
 import axios from 'axios'
+import './List.css'
 
 import ItemUser from './Item'
 
 
 class ListUser extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+                keyword:''
+          }}
     componentDidMount = () => {
 
         axios.get('http://127.0.0.1:5001/users').then((res) => {
@@ -15,6 +21,12 @@ class ListUser extends Component {
             // handle errors 
         });
     }
+
+
+    handlechange=(e)=>{ 
+        this.setState({keyword:e.target.value})
+             
+                  }
     render() {
         const { users } = this.props
 
@@ -30,7 +42,15 @@ class ListUser extends Component {
                                     <CardBody>
                                         <h1 className="h1 text-center text-success font-weight-bold">User List</h1>
                                         <hr></hr>
-                                        <div className="table-responsive">
+                            <div class="wrap">
+                            <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?" onChange={this.handlechange}/>
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                            </div>
+                                        <div className="table-responsive py-3">
                                             <table className="table">
                                                 <thead>
                                                     <tr className="bg-blue">
@@ -42,7 +62,7 @@ class ListUser extends Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {users.map((el, index) => <ItemUser key={index} item={el} />)}
+                                                    {users.filter(el => el.username.toUpperCase().includes(this.state.keyword.toUpperCase().trim())).map((el, index) => <ItemUser key={index} item={el} />)}
                                                 </tbody>
                                             </table>
 

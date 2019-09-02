@@ -18,7 +18,7 @@ import {
 // sidebar nav config
 //import navigation from '../../_nav';
 import navigationAdmin from '../../_navadmin';
-import navigationUser from '../../_navUser';
+// import navigationUser from '../../_navUser';
 // routes config
 import routes from '../../routes';
 

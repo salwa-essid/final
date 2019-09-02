@@ -20,8 +20,8 @@ class Nav extends Component {
                         </div>
                         <div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
                             <div class="header-top-info">
-                                <a href="tel:+23-345-67890">Call Us : <span>+23-345-67890</span></a>
-                                <a href="mailto:support@gmail.com" ><i class="fa fa-envelope mr-2"></i><span>support@gmail.com</span></a>
+                                <a href="tel:+23-345-67890">Call Us : <span>+216 27 699 896</span></a>
+                                <a href="mailto:support@gmail.com" ><i class="fa fa-envelope mr-2"></i><span>salwa.essid@gmail.com</span></a>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 
 
-class UserInfo extends Component {
+class AdminInfo extends Component {
     constructor(props) {
         super(props);
 
@@ -15,7 +15,7 @@ class UserInfo extends Component {
             fadeIn: true,
             timeout: 300,
             id: this.props.match.params.id,
-            username: "",
+            adminname: "",
             lastname: "",
             address: "",
             email: "",
@@ -25,11 +25,11 @@ class UserInfo extends Component {
         };
     }
 
-    getUser = () => {
-        axios.get(`http://127.0.0.1:5001/user/${this.props.match.params.id}`)
+    getAdmin = () => {
+        axios.get(`http://127.0.0.1:5001/admin/${this.props.match.params.id}`)
             .then((u) => {
                 this.setState({
-                    username: u.data.data.data.username,
+                    adminname: u.data.data.data.adminname,
                     lastname: u.data.data.data.lastname,
                     address: u.data.data.data.address,
                     email: u.data.data.data.email,
@@ -42,7 +42,7 @@ class UserInfo extends Component {
     }
 
     componentDidMount = () => {
-        this.getUser();
+        this.getAdmin();
     }
 
     render() {
@@ -55,14 +55,14 @@ class UserInfo extends Component {
                             <Col xs="12" sm="12" md="12">
                                 <Card>
                                     <CardBody>
-                                        <h1 className="h1 text-center text-success font-weight-bold">User Info</h1>
+                                        <h1 className="h1 text-center text-success font-weight-bold">Admin Info</h1>
                                         <hr></hr>
                                         <div className="table-responsive">
                                             <table className="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td className="font-weight-bold">Username</td>
-                                                        <td>{this.state.username}</td>
+                                                        <td className="font-weight-bold">Adminname</td>
+                                                        <td>{this.state.adminname}</td>
                                                     </tr>
                                                     <tr>
                                                         <td className="font-weight-bold">Lastname</td>
@@ -88,7 +88,6 @@ class UserInfo extends Component {
                                                             <Moment format="DD-MM-YYYY">{this.state.updatedAt}</Moment>
                                                         </td>
                                                     </tr>
-
                                                 </tbody>
                                                 <Link to='/users/list'>
                                                 <div className=" d-flex justify-content-start pl-5">
@@ -111,4 +110,4 @@ class UserInfo extends Component {
         );
     }
 }
-export default UserInfo;
+export default AdminInfo;

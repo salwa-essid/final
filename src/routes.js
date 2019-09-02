@@ -74,6 +74,21 @@ const AddAdmin = React.lazy(() =>
 const ListAdmin = React.lazy(() =>
     import('./views/admin/List'));
 
+
+
+
+    const AdminInfo = React.lazy(() =>
+    import('./views/admin/adminInfo'));
+
+const UpdateAdmin = React.lazy(() =>
+    import('./views/admin/UpdateAdmin'));
+
+
+
+
+
+
+
 const ListUser = React.lazy(() =>
     import('./views/Users/List'));
 
@@ -142,6 +157,8 @@ const routes = [
     { path: '/charts', name: 'Charts', component: Charts },
     { path: '/admin/add', exact: true, name: 'Add Admin', component: AddAdmin },
     { path: '/admin/list', exact: true, name: 'List Admin', component: ListAdmin },
+    { path: '/admin/info/:id', exact: true, name: 'Admin info', component: AdminInfo },
+    { path: '/admin/update/:id', exact: true, name: 'update_admin', component: UpdateAdmin },
 
     { path: '/users/add', exact: true, name: 'Add Users', component: AddUser },
     { path: '/users/list', exact: true, name: 'list_users', component: ListUser },

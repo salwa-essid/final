@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import axios from 'axios'
 import Moment from 'react-moment';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -26,7 +26,12 @@ class AdminInfo extends Component {
     }
 
     getAdmin = () => {
-        axios.get(`http://127.0.0.1:5001/admin/${this.props.match.params.id}`)
+        axios.get(`http://127.0.0.1:5001/admin/${this.props.match.params.id}`,
+            {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem("token")
+                }
+            })
             .then((u) => {
                 this.setState({
                     adminname: u.data.data.data.adminname,
@@ -90,10 +95,10 @@ class AdminInfo extends Component {
                                                     </tr>
                                                 </tbody>
                                                 <Link to='/users/list'>
-                                                <div className=" d-flex justify-content-start pl-5">
-                                                      <button type="button" name="" id="" className="btn btn-danger font-weight-bold w-25 btn-lg">
-                                                          <i className="fa fa-refresh pr-3"></i> List</button>
-                                                </div>
+                                                    <div className=" d-flex justify-content-start pl-5">
+                                                        <button type="button" name="" id="" className="btn btn-danger font-weight-bold w-25 btn-lg">
+                                                            <i className="fa fa-refresh pr-3"></i> List</button>
+                                                    </div>
                                                 </Link>
                                             </table>
 

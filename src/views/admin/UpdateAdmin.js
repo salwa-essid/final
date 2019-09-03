@@ -15,7 +15,7 @@ class UpdateAdmin extends Component {
       fadeIn: true,
       timeout: 300,
       id: this.props.match.params.id,
-     adminname: "",
+      adminname: "",
       lastname: "",
       address: "",
       email: "",
@@ -25,7 +25,7 @@ class UpdateAdmin extends Component {
 
   handleChange = (e) => {
     if (e.target.name === "firstname") {
-      this.setState({adminname: e.target.value })
+      this.setState({ adminname: e.target.value })
     }
     if (e.target.name === "lastname") {
       this.setState({ lastname: e.target.value })
@@ -44,30 +44,42 @@ class UpdateAdmin extends Component {
   handleSubmit = () => {
     axios.put("http://127.0.0.1:5001/admin", {
       id: this.state.id,
-     adminname: this.state.adminname,
+      adminname: this.state.adminname,
       lastname: this.state.lastname,
       address: this.state.address,
       email: this.state.email,
       phone: this.state.phone
-    }).then(success => {
-      // if status 200 OK
-      if (typeof (success.data.error) != "undefined" && success.data.error !== "") {
-        ToastsStore.error(success.data.error)
-      } else if (typeof (success.data.message) != "undefined" && success.data.message !== "") {
-        ToastsStore.success(success.data.message)
-        this.props.history.push("/admin/list");
-      }
-    }).catch(err => {
-      ToastsStore.error("Server error")
-    })
+    }, {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem("token")
+        }
+      }).then(success => {
+        // if status 200 OK
+        if (typeof (success.data.error) != "undefined" && success.data.error !== "") {
+          ToastsStore.error(success.data.error)
+        } else if (typeof (success.data.message) != "undefined" && success.data.message !== "") {
+          ToastsStore.success(success.data.message)
+          this.props.history.push("/admin/list");
+        }
+      }).catch(err => {
+        if (err.status === 401) {
+          this.props.history.push("login");
+        }
+        ToastsStore.error("Server error")
+      })
   }
 
   getAdmin = () => {
-    axios.get(`http://127.0.0.1:5001/admin/${this.props.match.params.id}`)
+    axios.get(`http://127.0.0.1:5001/admin/${this.props.match.params.id}`,
+      {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem("token")
+        }
+      })
       .then((u) => {
         this.props.AdminInfoReducer(u.data.data.data);
         this.setState({
-         adminname: this.props.admin.adminname,
+          adminname: this.props.admin.adminname,
           lastname: this.props.admin.lastname,
           address: this.props.admin.address,
           email: this.props.admin.email,

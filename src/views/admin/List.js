@@ -8,15 +8,27 @@ import ItemAdmin from './Item'
 
 class ListAdmin extends Component {
     componentDidMount = () => {
-
-        axios.get('http://127.0.0.1:5001/admins').then((res) => {
-            this.props.updateAdminReducer(res.data.data.data);
-        }).catch(e => {
-            // handle errors 
-        });
+        let token = localStorage.getItem("token");
+        if (!token) {
+            token = "";
+        }
+        axios.get('http://127.0.0.1:5001/admins',
+            {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            }).then((res) => {
+                this.props.updateAdminReducer(res.data.data.data);
+            }).catch(e => {
+                if (e.status === 401) {
+                    this.props.history.push("login");
+                  } else {
+                      // show error 
+                  }
+            });
     }
     render() {
-        const { admins} = this.props
+        const { admins } = this.props
 
 
         return (

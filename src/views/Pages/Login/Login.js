@@ -1,11 +1,62 @@
 import React, { Component } from 'react';
 import { Button, Col,  Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import './style.css'
+import { ToastsContainer, ToastsStore } from 'react-toasts';
+import  axios from 'axios';
+import JwtDecode from 'jwt-decode';
+
 
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      collapse: true,
+      fadeIn: true,
+      timeout: 300,
+      email: "",
+      password: ""
+    };
+  }
+
+  handleChange = (e) => {
+    if (e.target.name === "email") {
+      this.setState({ email: e.target.value })
+    }
+   
+    if (e.target.name === "password") {
+      this.setState({ password: e.target.value })
+    }
+  }
+
+
   login = () => {
-    console.log("nex future");
+    
+    if(this.state.email==="" || this.state.password===""){
+      ToastsStore.error("Enter password and email")
+    } else {
+      axios.post("http://127.0.0.1:5001/auth/admin/login",{
+        email:this.state.email,
+        password:this.state.password
+      }).then(success=>{
+        if(success.data.error===""){
+          localStorage.setItem('token',success.data.data.data)
+          var payload = JwtDecode(success.data.data.data)
+          if(payload.role){
+            if(payload.role==="SUPER_ADMIN"){
+               this.props.history.push("/admin/list");
+            }
+          } else {
+            localStorage.removeItem('token')
+          }
+        }else {
+         ToastsStore.error(success.data.error);
+        }
+      }).catch(error=>{
+        console.log(error)
+      })
+    }
   }
   render() {
     return (
@@ -65,6 +116,7 @@ class Login extends Component {
         
         
       <header id="header top-icon ">
+      <ToastsContainer store={ToastsStore} />
               <div className="container" >
                 <div className="row height-90 align-items-center
                 justify-content-center">
@@ -77,7 +129,7 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="Username" autoComplete="username" />
+                        <Input type="text" name="email" onChange={this.handleChange} placeholder="E-mail" autoComplete="off" />
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
@@ -85,7 +137,7 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" placeholder="Password" autoComplete="current-password" />
+                        <Input type="password" name="password" onChange={this.handleChange} placeholder="Password" autoComplete="current-password" />
                       </InputGroup>
                       <Row>
                         <Col xs="6">

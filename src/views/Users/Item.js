@@ -25,8 +25,16 @@ class ItemUser extends Component {
     }
 
     deleteuser = () => {
+        let token = localStorage.getItem("token");
+        if (!token) {
+            token = "";
+        }
         const { item } = this.props
-        axios.delete(`http://127.0.0.1:5001/user/${item.id}`)
+        axios.delete(`http://127.0.0.1:5001/user/${item.id}`,
+        {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }})
             .then(() => this.props.deleteUserReducer(item.id))
             .catch((err) => alert(err))
     }

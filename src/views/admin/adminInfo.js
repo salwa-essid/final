@@ -15,7 +15,7 @@ class AdminInfo extends Component {
             fadeIn: true,
             timeout: 300,
             id: this.props.match.params.id,
-            adminname: "",
+            username: "",
             lastname: "",
             address: "",
             email: "",
@@ -34,7 +34,7 @@ class AdminInfo extends Component {
             })
             .then((u) => {
                 this.setState({
-                    adminname: u.data.data.data.adminname,
+                    username: u.data.data.data.username,
                     lastname: u.data.data.data.lastname,
                     address: u.data.data.data.address,
                     email: u.data.data.data.email,
@@ -66,8 +66,8 @@ class AdminInfo extends Component {
                                             <table className="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td className="font-weight-bold">Adminname</td>
-                                                        <td>{this.state.adminname}</td>
+                                                        <td className="font-weight-bold">username</td>
+                                                        <td>{this.state.username}</td>
                                                     </tr>
                                                     <tr>
                                                         <td className="font-weight-bold">Lastname</td>

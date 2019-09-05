@@ -289,7 +289,7 @@ class AddAdmin extends Component {
       collapse: true,
       fadeIn: true,
       timeout: 300,
-     adminname: "",
+     username: "",
       lastname: "",
       address: "",
       email: "",
@@ -300,7 +300,7 @@ class AddAdmin extends Component {
 
   handleChange = (e) => {
     if (e.target.name === "firstname") {
-      this.setState({adminname: e.target.value })
+      this.setState({username: e.target.value })
     }
     if (e.target.name === "lastname") {
       this.setState({ lastname: e.target.value })
@@ -320,14 +320,23 @@ class AddAdmin extends Component {
   }
 
   handleSubmit = () => {
+    let token = localStorage.getItem("token");
+    if (!token) {
+        token = "";
+    }
     Axios.post("http://127.0.0.1:5001/admin", {
-     adminname: this.state.adminname,
+     username: this.state.username,
       lastname: this.state.lastname,
       address: this.state.address,
       email: this.state.email,
       password: this.state.password,
       phone: this.state.phone
-    }).then(success => {
+    },
+    {
+      headers: {
+          Authorization: 'Bearer ' + token
+      }
+  }).then(success => {
       // if status 200 OK
       if (typeof (success.data.error) != "undefined" && success.data.error !== "") {
         ToastsStore.error(success.data.error)

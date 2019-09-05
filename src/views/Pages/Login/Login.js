@@ -45,9 +45,12 @@ class Login extends Component {
           var payload = JwtDecode(success.data.data.data)
           if(payload.role){
             if(payload.role==="SUPER_ADMIN"){
-               this.props.history.push("/admin/list");
-            }
-          } else {
+              this.props.history.push("/admin/list");
+           } else if(payload.role==="ADMIN") {
+            this.props.history.push("/users/list");
+           }
+          }
+          else {
             localStorage.removeItem('token')
           }
         }else {

@@ -44,6 +44,10 @@ class AddUser extends Component {
   }
 
   handleSubmit = () => {
+    let token = localStorage.getItem("token");
+    if (!token) {
+        token = "";
+    }
     Axios.post("http://127.0.0.1:5001/user", {
       username: this.state.username,
       lastname: this.state.lastname,
@@ -51,7 +55,12 @@ class AddUser extends Component {
       email: this.state.email,
       password: this.state.password,
       phone: this.state.phone
-    }).then(success => {
+    },
+    {
+      headers: {
+          Authorization: 'Bearer ' + token
+      }
+  }).then(success => {
       // if status 200 OK
       if (typeof (success.data.error) != "undefined" && success.data.error !== "") {
         ToastsStore.error(success.data.error)

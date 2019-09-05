@@ -20,6 +20,7 @@ class DefaultHeader extends Component {
     const { children, ...attributes } = this.props;
 
     return (
+
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
@@ -53,6 +54,7 @@ class DefaultHeader extends Component {
         
         {/*<AppAsideToggler className="d-lg-none" mobile />*/}
       </React.Fragment>
+    
     );
   }
 }

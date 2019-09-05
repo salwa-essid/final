@@ -10,23 +10,23 @@ const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
 
 // Pages
 const Login = React.lazy(() => import('./views/Pages/Login'));
-
+const UserLogin = React.lazy(() => import('./views/Pages/Login/userLogin'));
 
 class App extends Component {
+	render() {
+		return (
+			<HashRouter>
+				<React.Suspense fallback={loading()}>
+					<Switch>
+						<Route exact path="/user/login" name="Login User" render={props => <UserLogin {...props} />} />
+						<Route exact path="/login" name="Login Page" render={props => <Login {...props} />} />
 
-  render() {
-    return (
-      <HashRouter>
-          <React.Suspense fallback={loading()}>
-            <Switch>
-              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
-             
-              <Route path="/" name="Home" render={props => <DefaultLayout {...props}/>} />
-            </Switch>
-          </React.Suspense>
-      </HashRouter>
-    );
-  }
+						<Route path="/" name="Home" render={props => <DefaultLayout {...props} />} />
+					</Switch>
+				</React.Suspense>
+			</HashRouter>
+		);
+	}
 }
 
 export default App;

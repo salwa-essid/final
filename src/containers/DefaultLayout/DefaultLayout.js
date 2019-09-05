@@ -18,9 +18,9 @@ import {
   AppSidebarNav2 as AppSidebarNav,
 } from '@coreui/react';
 // sidebar nav config
-import navigation from '../../_nav';
 import navigationAdmin from '../../_navadmin';
-import navigationUser from '../../_navUser';
+import navigationUser from '../../_navuser';
+import navigationPlug from '../../_navPlug';
 // routes config
 import routes from '../../routes';
 
@@ -45,10 +45,13 @@ class DefaultLayout extends Component {
     }
     if (role === "SUPER_ADMIN") {
       nav = navigationAdmin;
-    } else if (role === "USER") {
+    } else if (role === "ADMIN") {
       nav = navigationUser;
-    } else {
-      this.props.history.push('/login')
+    }else if (role === "USER") {
+      nav = navigationPlug;
+    }
+     else {
+      this.props.history.push('/user/login')
     }
 
     this.state = {
@@ -63,7 +66,7 @@ class DefaultLayout extends Component {
 
   signOut(e) {
     e.preventDefault()
-    this.props.history.push('/login')
+    this.props.history.push('/user/login')
   }
 
   render() {
@@ -101,7 +104,7 @@ class DefaultLayout extends Component {
                         )} />
                     ) : (null);
                   })}
-                  <Redirect from="/" to="/login" />
+                  <Redirect from="/" to="/user/login" />
                 </Switch>
               </Suspense>
             </Container>

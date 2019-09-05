@@ -14,8 +14,16 @@ class ListUser extends Component {
                 keyword:''
           }}
     componentDidMount = () => {
-
-        axios.get('http://127.0.0.1:5001/users').then((res) => {
+        let token = localStorage.getItem("token");
+        if (!token) {
+            token = "";
+        }
+        axios.get('http://127.0.0.1:5001/users',
+        {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }})
+        .then((res) => {
             this.props.updateUserReducer(res.data.data.data);
         }).catch(e => {
             // handle errors 

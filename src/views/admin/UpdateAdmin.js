@@ -42,6 +42,10 @@ class UpdateAdmin extends Component {
   }
 
   handleSubmit = () => {
+    let token = localStorage.getItem("token");
+    if (!token) {
+        token = "";
+    }
     axios.put("http://127.0.0.1:5001/admin", {
       id: this.state.id,
       adminname: this.state.adminname,
@@ -50,9 +54,9 @@ class UpdateAdmin extends Component {
       email: this.state.email,
       phone: this.state.phone
     }, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem("token")
-        }
+      headers: {
+          Authorization: 'Bearer ' + token
+      }
       }).then(success => {
         // if status 200 OK
         if (typeof (success.data.error) != "undefined" && success.data.error !== "") {

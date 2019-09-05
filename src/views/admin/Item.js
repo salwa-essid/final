@@ -14,6 +14,7 @@ class ItemAdmin extends Component {
             fadeIn: true,
             timeout: 300
         };
+        
     }
 
     toggle() {
@@ -35,7 +36,7 @@ class ItemAdmin extends Component {
         const { item } = this.props
         return (
             <tr>
-                <td >{item.adminname} {item.lastname}</td>
+                <td >{item.username} {item.lastname}</td>
                 <td >{item.email}</td>
                 <td >{item.phone}</td>
                 <td >{item.numero}</td>

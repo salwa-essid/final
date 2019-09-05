@@ -307,6 +307,7 @@ class DefaultAside extends Component {
           </TabPane>
         </TabContent>
       </React.Fragment>
+    
     );
   }
 }

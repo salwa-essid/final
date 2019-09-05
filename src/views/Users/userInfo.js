@@ -26,7 +26,16 @@ class UserInfo extends Component {
     }
 
     getUser = () => {
-        axios.get(`http://127.0.0.1:5001/user/${this.props.match.params.id}`)
+        let token = localStorage.getItem('token');
+		if (!token) {
+			token = '';
+		}
+        axios.get(`http://127.0.0.1:5001/user/${this.props.match.params.id}`,
+        {
+            headers: {
+                Authorization: 'Bearer ' + token,
+            },
+        })
             .then((u) => {
                 this.setState({
                     username: u.data.data.data.username,
